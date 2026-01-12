@@ -1,19 +1,101 @@
 # PromptGuard Blocklist
 
-A curated list of known malicious Chrome extension IDs used by [PromptGuard](https://github.com/obadiaha/promptguard) to protect users from dangerous browser extensions.
+A curated, multi-source blocklist of malicious Chrome extension IDs used by [PromptGuard](https://github.com/obadiaha/promptguard) to protect users from dangerous browser extensions.
 
-## How It Works
+## 📊 Current Stats
 
-PromptGuard automatically fetches this blocklist weekly to identify known malicious extensions installed in your browser. Extensions on this list are immediately flagged as high-risk.
+| Metric | Count |
+|--------|-------|
+| Total Blocked Extensions | 30 |
+| AI-Targeted Threats | 3 |
+| Intel Sources | 6+ |
+| Last Updated | 2026-01-12 |
 
-## Blocklist Format
+## 🔍 Intelligence Sources
 
-The `blocklist.json` file contains:
+We aggregate threat intelligence from multiple reputable sources:
 
+### Primary Sources
+| Source | Type | Coverage |
+|--------|------|----------|
+| **[CRXcavator](https://crxcavator.io)** | Risk Analysis API | All extensions |
+| **[ExtensionTotal](https://extensiontotal.com)** | Malware Detection | On-demand scans |
+| **Google Removals** | Official Takedowns | Chrome Web Store |
+| **Community Reports** | User Submissions | [Report an extension](../../issues/new?template=report-malicious-extension.md) |
+
+### Security Research
+- Guardio Labs - Browser security research
+- Avast Threat Labs - Malicious extension campaigns
+- McAfee Labs - Extension-based malware
+- Kaspersky Research - Browser threat analysis
+- Independent security researchers
+
+### AI-Focused Monitoring
+We specifically track extensions targeting AI platforms:
+- ChatGPT (chat.openai.com)
+- Claude (claude.ai)
+- Gemini (gemini.google.com)
+- Copilot (copilot.microsoft.com)
+- And 6+ more platforms
+
+See [ai-threats.json](./ai-threats.json) for the dedicated AI threat feed.
+
+## 📁 Files
+
+| File | Description |
+|------|-------------|
+| `blocklist.json` | Main blocklist with all malicious extension IDs |
+| `ai-threats.json` | AI platform-specific threats (prompt harvesting, etc.) |
+| `CONTRIBUTING.md` | How to contribute and report extensions |
+
+## 🚨 Threat Categories
+
+| Category | Count | Description |
+|----------|-------|-------------|
+| Data Harvesters | 5 | Extensions stealing browsing data |
+| Fake Ad Blockers | 2 | Impersonating legitimate ad blockers |
+| Cryptominers | 3 | Background cryptocurrency mining |
+| Credential Stealers | 4 | Stealing passwords and sessions |
+| Session Replay | 2 | Recording all user input |
+| Malicious VPNs | 2 | Routing traffic through attackers |
+| Click Fraud | 2 | Ad injection and click fraud |
+| Dormant Colors | 10 | Large-scale affiliate fraud campaign |
+
+## 🤖 AI-Specific Threats
+
+Extensions that specifically target AI chatbots to steal prompts:
+
+| Threat Type | Risk | Description |
+|-------------|------|-------------|
+| Prompt Harvesting | Critical | Captures everything you type into AI |
+| Response Injection | High | Modifies AI responses |
+| Session Hijacking | High | Steals AI platform credentials |
+| Data Exfiltration | High | Sends conversations to third parties |
+| Fake AI Tools | Critical | Malicious ChatGPT/Claude clones |
+
+## 🔄 Update Schedule
+
+- **Real-time**: Critical threats added immediately
+- **Weekly**: New Google removals and research reports
+- **Monthly**: Comprehensive audit and cleanup
+
+## 📥 Integration
+
+### For PromptGuard Users
+The blocklist is automatically fetched weekly. No action needed.
+
+### For Developers
+```bash
+# Fetch the blocklist
+curl https://raw.githubusercontent.com/obadiaha/promptguard-blocklist/main/blocklist.json
+
+# Fetch AI-specific threats
+curl https://raw.githubusercontent.com/obadiaha/promptguard-blocklist/main/ai-threats.json
+```
+
+### API Format
 ```json
 {
-  "version": "1.0.0",
-  "last_updated": "2026-01-12",
   "malicious_ids": [
     {
       "id": "extension-id-here",
@@ -25,60 +107,27 @@ The `blocklist.json` file contains:
 }
 ```
 
-## Intelligence Sources
+## 🆘 Report an Extension
 
-Our blocklist is compiled from multiple reputable sources:
+Found a malicious extension? Help us protect others:
 
-### Primary Sources
-- **Google Chrome Web Store Removals** - Extensions removed by Google for policy violations
-- **CRXcavator** - Extension security analysis database
-- **ExtensionTotal** - Malware detection for browser extensions
+**[→ Report Malicious Extension](../../issues/new?template=report-malicious-extension.md)**
 
-### Security Research
-- **Avast Threat Labs** - Malicious extension campaigns
-- **McAfee Labs** - Browser threat research
-- **Kaspersky Research** - Extension-based malware analysis
-- **Guardio Labs** - Browser security research
+Please include:
+1. Extension ID (from `chrome://extensions`)
+2. Description of malicious behavior
+3. Any evidence (screenshots, logs)
 
-### Community & Academic
-- **Security researcher disclosures** - Published CVEs and blog posts
-- **r/chrome community reports** - User-reported suspicious extensions
-- **Academic papers** - Browser extension security research
-
-## Current Categories
-
-| Category | Count | Description |
-|----------|-------|-------------|
-| Data Harvesters | 5 | Extensions stealing browsing data |
-| Fake Ad Blockers | 2 | Impersonating legitimate ad blockers |
-| Cryptominers | 3 | Background cryptocurrency mining |
-| Credential Stealers | 4 | Stealing passwords and login sessions |
-| Session Replay | 2 | Recording all user input |
-| Malicious VPNs | 2 | Routing traffic through attacker servers |
-| Click Fraud | 2 | Ad injection and click fraud |
-| Dormant Colors | 10 | Large-scale affiliate fraud campaign |
-
-## Contributing
-
-Found a malicious extension? Please open an issue or PR with:
-1. Extension ID (32-character string)
-2. Extension name
-3. Evidence of malicious behavior
-4. Source/reference
-
-## Update Frequency
-
-This blocklist is updated:
-- **Immediately** when new threats are discovered
-- **Weekly** review of new Google removals
-- **Monthly** comprehensive audit
-
-## License
-
-MIT License - Feel free to use this blocklist in your own security tools.
-
-## Related Projects
+## 🔗 Related Projects
 
 - [PromptGuard](https://github.com/obadiaha/promptguard) - Chrome extension security scanner
-- [CRXcavator](https://crxcavator.io/) - Extension analysis tool
-- [Extension Monitor](https://extensionmonitor.com/) - Track extension changes
+- [CRXcavator](https://crxcavator.io) - Extension risk analysis
+- [ExtensionTotal](https://extensiontotal.com) - Extension malware scanner
+
+## 📄 License
+
+MIT License - Use this blocklist in your own security tools.
+
+---
+
+**Protecting your AI conversations, one extension at a time.**

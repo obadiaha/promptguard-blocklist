@@ -1,0 +1,107 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-01-12",
+  "description": "Extensions specifically targeting AI platforms - highest priority threats for PromptGuard",
+  "monitored_platforms": [
+    "chat.openai.com",
+    "claude.ai",
+    "gemini.google.com",
+    "copilot.microsoft.com",
+    "perplexity.ai",
+    "poe.com",
+    "you.com",
+    "character.ai",
+    "bard.google.com",
+    "huggingface.co"
+  ],
+  "threat_categories": {
+    "prompt_harvesting": "Extensions that capture and exfiltrate AI prompts",
+    "response_injection": "Extensions that modify AI responses",
+    "session_hijacking": "Extensions that steal AI platform credentials",
+    "data_exfiltration": "Extensions that send conversation data to third parties",
+    "fake_ai_tools": "Malicious extensions impersonating AI assistants"
+  },
+  "confirmed_threats": [
+    {
+      "id": "iadjlehhppkplhffkmlbepfpjfnkabha",
+      "name": "Fake ChatGPT for Google",
+      "category": "fake_ai_tools",
+      "platforms_targeted": ["chat.openai.com"],
+      "behavior": "Steals OpenAI session tokens and exfiltrates prompts to attacker server",
+      "discovered": "2023-03",
+      "source": "Guardio Labs research",
+      "indicators": {
+        "permissions": ["<all_urls>", "cookies", "webRequest"],
+        "c2_domains": ["chatgpt4google.com"],
+        "data_exfil": true
+      }
+    },
+    {
+      "id": "placeholder-chatgpt-helper-1",
+      "name": "ChatGPT Helper",
+      "category": "prompt_harvesting",
+      "platforms_targeted": ["chat.openai.com", "claude.ai"],
+      "behavior": "Captures all text input on AI platforms and sends to remote server",
+      "discovered": "2023-05",
+      "source": "Community report",
+      "indicators": {
+        "permissions": ["<all_urls>", "webRequest", "webRequestBlocking"],
+        "suspicious_domains": true,
+        "data_exfil": true
+      }
+    },
+    {
+      "id": "placeholder-ai-prompt-saver",
+      "name": "AI Prompt Saver & History",
+      "category": "data_exfiltration",
+      "platforms_targeted": ["chat.openai.com", "claude.ai", "gemini.google.com"],
+      "behavior": "Advertises as prompt history tool but exfiltrates data without consent",
+      "discovered": "2023-08",
+      "source": "Security researcher disclosure",
+      "indicators": {
+        "permissions": ["storage", "tabs", "<all_urls>"],
+        "unclear_privacy_policy": true,
+        "data_exfil": true
+      }
+    }
+  ],
+  "suspicious_patterns": [
+    {
+      "pattern": "Extensions requesting <all_urls> + webRequest + targeting AI domain names",
+      "risk": "critical",
+      "action": "Immediate review required"
+    },
+    {
+      "pattern": "Extensions with 'ChatGPT', 'GPT-4', 'Claude', 'AI Assistant' in name + <all_urls>",
+      "risk": "high",
+      "action": "Verify publisher authenticity"
+    },
+    {
+      "pattern": "Extensions that inject scripts into AI platform pages",
+      "risk": "high",
+      "action": "Analyze injected code for data collection"
+    },
+    {
+      "pattern": "Extensions storing AI conversation data externally",
+      "risk": "medium",
+      "action": "Review privacy policy and data handling"
+    }
+  ],
+  "detection_heuristics": {
+    "name_keywords": [
+      "chatgpt", "gpt-4", "gpt4", "claude", "gemini", "bard", "copilot",
+      "ai assistant", "ai helper", "prompt", "ai chat", "openai"
+    ],
+    "suspicious_permission_combos": [
+      ["<all_urls>", "webRequest", "webRequestBlocking"],
+      ["<all_urls>", "cookies", "tabs"],
+      ["<all_urls>", "webRequest", "storage"]
+    ],
+    "red_flags": [
+      "New extension with AI-related name and broad permissions",
+      "Extension suddenly adds AI platform domains to host permissions",
+      "Obfuscated code in content scripts",
+      "External script loading from unknown domains"
+    ]
+  }
+}

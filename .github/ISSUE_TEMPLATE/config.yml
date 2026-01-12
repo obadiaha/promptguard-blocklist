@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: CRXcavator
+    url: https://crxcavator.io
+    about: Check extension risk scores on CRXcavator
+  - name: ExtensionTotal
+    url: https://www.extensiontotal.com
+    about: Scan extensions for malware
+  - name: Chrome Web Store
+    url: https://chrome.google.com/webstore
+    about: Report extensions directly to Google
