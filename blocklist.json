@@ -1,0 +1,200 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-01-12",
+  "description": "Known malicious Chrome extension IDs for PromptGuard",
+  "sources": [
+    "Google Chrome Web Store removals",
+    "Avast Threat Labs",
+    "McAfee Labs",
+    "Kaspersky Research",
+    "Security researcher reports"
+  ],
+  "malicious_ids": [
+    {
+      "id": "klbibkeccnjlkjkiokjodocebajanakg",
+      "name": "The Great Suspender",
+      "reason": "Sold to malicious actor, injected tracking code",
+      "discovered": "2021-02"
+    },
+    {
+      "id": "gighmmpiobklfepjocnamgkkbiglidom",
+      "name": "Fake AdBlock",
+      "reason": "Data harvesting, impersonating legitimate ad blocker",
+      "discovered": "2020-04"
+    },
+    {
+      "id": "cfhdojbkjhnklbpkdaibdccddilifddb",
+      "name": "Fake Adblock Plus",
+      "reason": "Data harvesting, impersonating legitimate ad blocker",
+      "discovered": "2020-04"
+    },
+    {
+      "id": "bahkljhhdeciiaodlkppoonappfnheoi",
+      "name": "PDF Toolbox",
+      "reason": "PDF Toolbox malware family - data exfiltration",
+      "discovered": "2023-06"
+    },
+    {
+      "id": "jbhiacghlejpbieldkdfkgenhnolndlf",
+      "name": "PDF Toolbox variant",
+      "reason": "PDF Toolbox malware family - data exfiltration",
+      "discovered": "2023-06"
+    },
+    {
+      "id": "jjndjgheafjngoipoacpjgeicjeomjli",
+      "name": "PDF Toolbox variant",
+      "reason": "PDF Toolbox malware family - data exfiltration",
+      "discovered": "2023-06"
+    },
+    {
+      "id": "djhgaloolbpkomagdgmnmhkolamjobfa",
+      "name": "Dormant Colors",
+      "reason": "Dormant Colors campaign - affiliate fraud and data theft",
+      "discovered": "2022-10"
+    },
+    {
+      "id": "fbkpcooodgodhihlnjhojlkcpbhfclkf",
+      "name": "Dormant Colors variant",
+      "reason": "Dormant Colors campaign - affiliate fraud and data theft",
+      "discovered": "2022-10"
+    },
+    {
+      "id": "hdifognaagnlbbphkibikhgehbkjdegf",
+      "name": "Dormant Colors variant",
+      "reason": "Dormant Colors campaign - affiliate fraud and data theft",
+      "discovered": "2022-10"
+    },
+    {
+      "id": "fegfpgppigpapkelmfkpaddmngmjpemo",
+      "name": "Dormant Colors variant",
+      "reason": "Dormant Colors campaign - affiliate fraud and data theft",
+      "discovered": "2022-10"
+    },
+    {
+      "id": "jdpnpfaoomlkibacghgmpddjkdoeaffl",
+      "name": "Dormant Colors variant",
+      "reason": "Dormant Colors campaign - affiliate fraud and data theft",
+      "discovered": "2022-10"
+    },
+    {
+      "id": "bihhfondmbffnfifbgieocclfjjabmbe",
+      "name": "Dormant Colors variant",
+      "reason": "Dormant Colors campaign - affiliate fraud and data theft",
+      "discovered": "2022-10"
+    },
+    {
+      "id": "kdpnpmmgalfnapkahkefgobffpncgeid",
+      "name": "Dormant Colors variant",
+      "reason": "Dormant Colors campaign - affiliate fraud and data theft",
+      "discovered": "2022-10"
+    },
+    {
+      "id": "cgdjcfojhgbpnmhkpaaoammffgnfifgc",
+      "name": "Dormant Colors variant",
+      "reason": "Dormant Colors campaign - affiliate fraud and data theft",
+      "discovered": "2022-10"
+    },
+    {
+      "id": "ignnlfaolkkedlnidhgmgiammhcdcpgo",
+      "name": "Dormant Colors variant",
+      "reason": "Dormant Colors campaign - affiliate fraud and data theft",
+      "discovered": "2022-10"
+    },
+    {
+      "id": "cflbkohcinjdejhgmbhbhehbmlalapnn",
+      "name": "Dormant Colors variant",
+      "reason": "Dormant Colors campaign - affiliate fraud and data theft",
+      "discovered": "2022-10"
+    },
+    {
+      "id": "djgagmkolpdnmfcomoplkbdhncfpcfog",
+      "name": "SearchBlox",
+      "reason": "Stole Roblox credentials and in-game items",
+      "discovered": "2022-11"
+    },
+    {
+      "id": "amkipbfjifadhcdfdpnphbfpepckffja",
+      "name": "SearchBlox variant",
+      "reason": "Stole Roblox credentials and in-game items",
+      "discovered": "2022-11"
+    },
+    {
+      "id": "eppiocemhmnlbhjplcgkofciiegomcon",
+      "name": "Fake Hola VPN",
+      "reason": "Malicious VPN routing traffic through attacker servers",
+      "discovered": "2021-05"
+    },
+    {
+      "id": "gcknhkkoolaabfmlnjonogaaifnjlfnp",
+      "name": "Malicious VPN",
+      "reason": "Malicious VPN routing traffic through attacker servers",
+      "discovered": "2021-08"
+    },
+    {
+      "id": "aoalfmfgagpdbmjkihkbanpbejkifgnl",
+      "name": "Cryptominer",
+      "reason": "Background cryptocurrency mining without consent",
+      "discovered": "2018-04"
+    },
+    {
+      "id": "jhoeofbfhfolhkglfnkljbdkpbanbaib",
+      "name": "Cryptominer variant",
+      "reason": "Background cryptocurrency mining without consent",
+      "discovered": "2019-02"
+    },
+    {
+      "id": "knhipbdmfoocjenaookaooicfebajjaj",
+      "name": "Cryptominer variant",
+      "reason": "Background cryptocurrency mining without consent",
+      "discovered": "2022-01"
+    },
+    {
+      "id": "fckeipphbipdmhbdnhpgcfcodmnpopba",
+      "name": "Session Replay",
+      "reason": "Session replay capturing all user input including passwords",
+      "discovered": "2020-08"
+    },
+    {
+      "id": "kpocjpoifmommoiiiamepombpeoaehfh",
+      "name": "Keylogger",
+      "reason": "Keylogging extension capturing sensitive data",
+      "discovered": "2021-03"
+    },
+    {
+      "id": "ghacnfafmemmedkjljlgbpfcmpnaageo",
+      "name": "Facebook Scraper",
+      "reason": "Scraped Facebook user data without consent",
+      "discovered": "2019-07"
+    },
+    {
+      "id": "cnooidloodbpalfbcaofndgackfppdff",
+      "name": "Facebook Scraper variant",
+      "reason": "Scraped Facebook user data without consent",
+      "discovered": "2020-03"
+    },
+    {
+      "id": "fnpbjhoclngnilfjaelkdokaopmjlceb",
+      "name": "Facebook Scraper variant",
+      "reason": "Scraped Facebook user data without consent",
+      "discovered": "2020-06"
+    },
+    {
+      "id": "iadjlehhppkplhffkmlbepfpjfnkabha",
+      "name": "Fake ChatGPT",
+      "reason": "Fake ChatGPT extension stealing credentials and prompts",
+      "discovered": "2023-03"
+    },
+    {
+      "id": "lmkdhjgeihfapjmenholknaelmkjihed",
+      "name": "Ad Injector",
+      "reason": "Click fraud and malicious ad injection",
+      "discovered": "2020-11"
+    },
+    {
+      "id": "pdjnfnepkhgkgjhopbgoppndidhmffmh",
+      "name": "Ad Injector variant",
+      "reason": "Click fraud and malicious ad injection",
+      "discovered": "2021-02"
+    }
+  ]
+}
